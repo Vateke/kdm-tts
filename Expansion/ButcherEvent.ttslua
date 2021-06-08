@@ -1,0 +1,43 @@
+return {
+    name = "Butcher Event",
+
+    components = {
+        ["Rare Gear"] = "Lantern Mantle",
+    },
+
+    timelineEvents = {
+        { year = 3, name = "Fresh Meat", type = "RulebookEvent" },
+    },
+
+    armorStats = {
+        ["Lantern Mantle"]     = { head = 0, arms = 0, body = 2, waist = 0, legs = 0, modifier = true },
+    },
+
+    guidNames = { ["9cb26f"] = "Butcher Event Archive" },
+
+    archiveEntries = {
+        archive = "Butcher Event Archive",
+        entries = {
+            { "Butcher Event Rules", "Rulebook" },
+
+            { "Lantern Mantle", "Gear" },
+        },
+    },
+
+    rulebooks = {
+        {
+            name = "Butcher Event Rules",
+            pages = {
+                ["Butcher Event Rules"] = {
+                    keywords = { "Butcher", "Rulebook", "Rules" },
+                    state = 1,
+                },
+                ["Fresh Meat"] = {
+                    keywords = { "Fresh", "Meat"},
+                    state = 2,
+                    timelineEvent = true,
+                },
+            },
+        },
+    },
+}

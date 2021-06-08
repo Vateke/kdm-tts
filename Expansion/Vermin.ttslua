@@ -1,0 +1,37 @@
+return {
+    name = "Expanded Vermin",
+
+    components = {
+        ["Hunt Events"] = "Bug Collector",
+        ["Vermin"] = "Expanded Vermin",
+        ["Rare Gear"] = "Centipede Claw"
+    },
+
+    guidNames = { ["51c5e8"] = "Expanded Vermin Archive" },
+
+    archiveEntries = {
+        archive = "Expanded Vermin Archive",
+        entries = {
+            { "Nightmare Paella", "Rulebook" },
+
+            { "Expanded Vermin", "Vermin" },
+
+            { "Bug Collector", "Hunt Events" },
+
+            { "Centipede Claw", "Gear" },
+
+        },
+    },
+
+    rulebooks = {
+        {
+            name = "Nightmare Paella",
+            pages = {
+                ["Nightmare Paella"] = {
+                    keywords = { "Vermin", "Nightmare", "Paella", "Cooking"},
+                    state = 1,
+                },
+            },
+        },
+    },
+}

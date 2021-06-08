@@ -38,6 +38,7 @@ Player.TOKEN_STATS = {
     ["Strength Token"] = "strength",
     ["Evasion Token"] = "evasion",
     ["Luck Token"] = "luck",
+    ["Lunacy Token"] = "lunacy",
 }
 
 ---------------------------------------------------------------------------------------------------

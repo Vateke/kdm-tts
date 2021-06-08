@@ -1,0 +1,106 @@
+return {
+		name = "Storm Dancer",
+
+		components = {
+				["Innovations"] = "Rain Cloud Pipe",
+				["Armor Sets"] = "Michishio Armor Set",
+        ["Rare Gear"] = "Mist Raven Obi",
+		},
+
+		armorStats = {
+			["Michishio Armor Set"] = { head = 1, arms = 1, body = 1, waist = 1, legs = 1, modifier = true },
+			["Mist Raven Obi"] = { head = 0, arms = 0, body = 0, waist = 4, legs = 0},
+		},
+
+		archiveEntries = {
+		archive = "Storm Dancer Archive",
+		entries = {
+				{ "Storm Dancer Rules", "Rulebook" },
+				{ "Storm Dancer Info", "AI" },
+				{ "Storm Dancer Basic Action", "AI" },
+				{ "Storm Dancer Basic AI", "AI" },
+				{ "Storm Dancer Special AI", "AI" },
+				{ "Storm Dancer Hit Locations", "Hit Locations" },
+				{ "Stormy Encounter", "Bookmark" },
+				{ "Mist Raven Obi", "Gear" },
+				{ "Rain Cloud Pipe", "Innovations" },
+				{ "Michishio Armor Set", "Armor Sets" },
+				},
+		},
+
+		guidNames = { ["4a79cd"] = "Storm Dancer Archive" },
+
+		rulebooks = {
+				{
+						name = "Storm Dancer Rules",
+						pages = {
+								["Storm Dancer Rules"] = {
+										keywords = { "Storm", "Dancer", "Rulebook", "Rules" },
+										state = 0,
+								},
+								["Showdown: Storm Dancer"] = {
+										keywords = {"Showdown:", "Storm", "Dancer"},
+										state = 4,
+										showdown = true,
+								},
+						},
+				},
+		},
+		monsters = {
+				{
+						name = "Storm Dancer",
+						nemesis = true,
+						size = { x = 2, y = 2 },
+						rules = { "Storm Dancer Rules", 4 },
+						resourcesDeck = false,
+            advancedAiDeck = false,
+            legendaryAiDeck = false,
+						position = "(11.5, 8.5)",
+            fixedTerrain = {
+                {
+                    terrain = "2 Cowering Survivors",
+                    positions = { "(6, 5)", "(17, 5)"},
+                    rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 } },
+
+                },
+                {
+                    terrain = "Hovel",
+                    positions = { "(6.5, 6.5)" },
+                    rotations = { { x = 0, y = 180, z = 0 } },
+                },
+                {
+                    terrain = "Hovel",
+                    positions = { "(16.5, 6.5)" },
+                    rotations = { { x = 0, y = 180, z = 0 } },
+                },
+								{
+										terrain = "Forsaken Fog",
+										positions = { "(11.5, 8.5)" },
+										rotations = { { x = 0, y = 180, z = 0 } },
+								},
+            },
+						playerPositions = { "(10, 16)", "(11, 16)", "(12, 16)", "(13, 16)" },
+						playerRotations = { { x = 0, y = 90, z = 0 }, { x = 0, y = 90, z = 0 }, { x = 0, y = -90, z = 0 }, { x = 0, y = -90, z = 0 } },
+						levels = {
+								{
+										name = "Level 4",
+										level = 4,
+										showdown = {
+												starting = {
+														special = { "Corrosive Venom", "Total Eclipse", "Hook and Reel", "Charged", "Static Shawl", "Noxious Waltz" },
+														misc = { "Indomitable" },
+												},
+												basic = 18,
+												movement = 13,
+												toughness = 16,
+												speed = 4,
+												damage = 3,
+												evasion = 2,
+												accuracy = 3,
+												luck = 3,
+										},
+								},
+						},
+				},
+		},
+}

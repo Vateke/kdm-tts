@@ -1,0 +1,192 @@
+return {
+		name = "Drifter Knight",
+
+		components = {
+				["Settlement Events"] = "Drifter Knight Settlement Events",
+				["Strange Resources"] = "Drifter Knight Strange Resources",
+				["Tactics"] = "Drifter Knight Tactics",
+				["Settlement Locations"] = "Jellyfish Apothecary",
+				["Disorders"] = "Drifter Knight Disorders",
+				["Secret Fighting Arts"] = "Drifting Dance",
+        ["Terrain Tiles"] = { "Tidal Pool", "Dead Coral/Living Coral" },
+				["Fighting Arts"] = "Drifter Knight Fighting Arts",
+				["Terrain"] = "Drifter Knight Terrain",
+        ["Rare Gear"] = "Drifter Knight Rare Gear",
+		},
+
+		terrain = {
+        ["Tidal Pool"] = { terrainTile = "Tidal Pool", count = "1" },
+        ["3 Living Coral"] = { terrainTile = "Dead Coral/Living Coral", count = "3" },
+        ["3 Dead Coral"] = { terrainTile = "Dead Coral/Living Coral", count = "3" },
+		},
+
+		terrainTileSizes = {
+				["Dead Coral/Living Coral"] = { x = 1, y = 1},
+				["Tidal Pool"] = { x = 2, y = 2},
+		},
+
+		settlementEvents = {
+        "Morbid Fog Bank",
+        "Ghostly Carrion",
+		},
+
+		timelineEvents = {
+      { year = 6, name = "A Parade of Ghosts", type = "RulebookEvent"},
+		},
+
+		settlementLocationGear = {
+        ["Jellyfish Apothecary"] = "Jellyfish Apothecary Gear",
+		},
+
+		armorStats = {
+      ["Iron Parasol"] = { head = 1, arms = 1, body = 1, waist = 1, legs = 1, modifier = true },
+      ["Drifting Aegis"] = { head = 0, arms = 0, body = 3, waist = 0, legs = 0},
+      ["Ghostly Sleeves"] = { head = 0, arms = 3, body = 0, waist = 0, legs = 0},
+      ["Pearlescent Sleeves"] = { head = 0, arms = 0, body = 0, waist = 0, legs = 3},
+		},
+
+		weaponStats = {
+      ["Iron Parasol"] = { speed = 1, accuracy = 6, strength = 5 },
+      ["Naginata"] = { speed = 2, accuracy = 4, strength = 4, deadly = 1 },
+		},
+
+		guidNames = { ["308300"] = "Drifter Knight Archive" },
+
+    archiveEntries = {
+		archive = "Drifter Knight Archive",
+		entries = {
+				{ "Drifter Knight Rules", "Rulebook" },
+				{ "Drifter Knight Info", "AI" },
+				{ "Drifter Knight Basic Action", "AI" },
+				{ "Jellyfish Apothecary Gear", "Gear" },
+				{ "Drifter Knight Rare Gear", "Gear" },
+				{ "Drifter Knight Settlement Events", "Settlement Events" },
+				{ "Dead Coral/Living Coral", "Terrain Tiles" },
+				{ "Drifter Knight Strange Resources", "Strange Resources" },
+				{ "Drifter Knight Tactics", "Tactics" },
+				{ "Jellyfish Apothecary", "Settlement Locations" },
+				{ "Drifter Knight Disorders", "Disorders" },
+				{ "Drifting Dance", "Secret Fighting Arts" },
+				{ "Tidal Pool", "Terrain Tiles" },
+				{ "Drifter Knight Fighting Arts", "Fighting Arts" },
+				{ "Drifter Knight Hit Locations", "Hit Locations" },
+				{ "Drifter Knight Advanced AI", "AI" },
+				{ "Drifter Knight Hunt Events", "Monster Hunt Events" },
+				{ "Drifter Knight Special AI", "AI" },
+				{ "Drifter Knight Legendary AI", "AI" },
+				{ "Drifter Knight Basic AI", "AI" },
+				{ "Drifter Knight Terrain", "Terrain" },
+				{ "Drifter Knight Resources", "Monster Resources" },
+        { "Drifter Knight", "Monster Figurine" },
+				},
+		},
+
+		rulebooks = {
+				{
+		        name = "Drifter Knight Rules",
+		        pages = {
+		            ["Drifter Knight Rules"] = {
+		                keywords = { "Drifter", "Knight", "Rulebook", "Rules" },
+		                state = 0,
+		            },
+		            ["A Parade of Ghosts"] = {
+		                keywords = {"A", "Parade", "of", "Ghosts"},
+		                state = 3,
+		                timelineEvent = true,
+		            },
+		            ["Show Me Your Motivation"] = {
+		                keywords = {"Show", "Me", "Your", "Motivation"},
+		                state = 8,
+		            },
+		            ["Showdown: Drifter Knight"] = {
+		                keywords = {"Showdown:", "Drifter", "Knight"},
+		                state = 10,
+		                showdown = true,
+		            },
+		        }
+				}
+		},
+
+    monsters = {
+        {
+            name = "Drifter Knight",
+            size = { x = 2, y = 2 },
+            rules = { "Drifter Knight Rules", 10 },
+            huntTrack = { "H", "M", "H", "M", "H", "O", "H", "M", "H", "M", "H" },
+            position = "(11.5, 8.5)",
+            playerPositions = { "(10, 16)", "(11, 16)", "(12, 16)", "(13, 16)" },
+            playerRotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 } },
+
+						fixedTerrain = {
+								{
+										terrain = "Tidal Pool",
+										positions = { "(11.5, 8.5)" },
+										rotations = { { x = 0, y = 180, z = 0 } },
+								},
+								{
+										terrain = "3 Living Coral",
+										positions = { "(7, 8)", "(7, 9)", "(11, 4)" },
+										rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 } , { x = 0, y = 180, z = 0 } , { x = 0, y = 180, z = 0 } },
+								},
+								{
+										 terrain = "3 Dead Coral",
+										 positions = { "(16, 8)", "(16, 9)", "(12, 4)" },
+										 rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 } , { x = 0, y = 180, z = 0 } , { x = 0, y = 180, z = 0 } },
+								}
+						},
+						randomTerrain = 2,
+
+						levels = {
+                {
+                    name = "Level 1",
+                    level = 1,
+                    monsterHuntPosition = 5,
+                    showdown = {
+                        starting = {
+                            special = { "Hook and Reel", "Aimless Drifting", "Blood Tide", "Shame" },
+                        },
+                        basic = 7,
+                        advanced = 4,
+                        movement = 8,
+                        toughness = 8,
+                    },
+                },
+                {
+                    name = "Level 2",
+                    level = 2,
+                    monsterHuntPosition = 8,
+                    showdown = {
+                        starting = {
+                            special = { "Hook and Reel", "Aimless Drifting", "Blood Tide", "Shame", "Corrosive Venom" },
+                        },
+                        basic = 10,
+                        advanced = 5,
+                        legendary = 1,
+                        movement = 12,
+                        toughness = 12,
+                        speed = 1,
+                        damage = 1,
+                    },
+                },
+                {
+                    name = "Level 3",
+                    level = 3,
+                    monsterHuntPosition = 10,
+                    showdown = {
+                        starting = {
+                            special = { "Hook and Reel", "Aimless Drifting", "Blood Tide", "Shame", "Corrosive Venom", "Total Eclipse" },
+                            misc = { "Indomitable" },
+                        },
+                        basic = 10,
+                        advanced = 7,
+                        legendary = 2,
+                        movement = 14,
+                        toughness = 14,
+                        speed = 2,
+                        damage = 2,
+                    },
+                },
+            },
+        },
+    },
+}

@@ -1,0 +1,387 @@
+return {
+    name = "Allison the Twilight Knight",
+
+    components = {
+        ["Fighting Arts"] = "Quick Strike",
+        ["Disorders"] = "Impetuous",
+        ["Abilities"] = "Allison the Twilight Knight Abilities",
+        ["Tactics"] = "Sneak Attack",
+        ["Strange Resources"] = "Allison the Twilight Knight Strange Resources",
+        ["Armor Sets"] = "Bronze Armor",
+        ["Terrain"] = "Mineral Vein",
+        ["Innovations"] = "Allison the Twilight Knight Innovations",
+        ["Terrain Tiles"] = { "Mineral Vein" },
+        ["Settlement Locations"] = "Bronzesmith",
+        ["Rare Gear"] = "Allison the Twilight Knight Rare Gear",
+        ["Settlement Events"] = "Allison the Twilight Knight Settlement Events",
+
+        ["Weapon Proficiencies"] = "Twilight Sword Proficiency (Allison)",
+    },
+
+
+    settlementEvents = {
+        "Training Day",
+        "Coming of Age",
+    },
+
+    campaigns = {
+        {
+            name = "Twilight Knight",
+            timeline = {
+                { year = 1, type = "RulebookEvent", name = "Returning Survivors" },
+                { year = 2, type = "RulebookEvent", name = "Endless Screams" },
+                { year = 4, type = "ShowdownEvent", monster = "Butcher", level = "Level 1" },
+                { year = 5, type = "RulebookEvent", name = "Hands of Heat" },
+                { year = 6, type = "RulebookEvent", name = "Allison: Hooded Knight" },
+                { year = 6, type = "RulebookEvent", name = "Armored Strangers" },
+                { year = 7, type = "RulebookEvent", name = "Phoenix Feather" },
+                { year = 9, type = "ShowdownEvent", monster = "King's Man", level = "Level 1" },
+                { year = 11, type = "RulebookEvent", name = "Regal Visit" },
+                { year = 12, type = "RulebookEvent", name = "Principle: Conviction" },
+                { year = 13, type = "ShowdownEvent", monster = "The Hand", level = "Level 1" },
+                { year = 16, type = "ShowdownEvent", monster = "Butcher", level = "Level 2" },
+                { year = 19, type = "ShowdownEvent", monster = "King's Man", level = "Level 2" },
+                { year = 20, type = "RulebookEvent", name = "Watched" },
+                { year = 23, type = "ShowdownEvent", monster = "Butcher", level = "Level 3" },
+                { year = 25, type = "ShowdownEvent", monster = "Dread Watcher", level = "Level 1" },
+                { year = 28, type = "ShowdownEvent", monster = "King's Man", level = "Level 3" },
+                { year = 30, type = "ShowdownEvent", monster = "Gold Smoke Knight" },
+            },
+            survivalActions = {
+                { name = "Dodge", checked = true },
+                { name = "Encourage" },
+                { name = "Dash" },
+                { name = "Surge" },
+                { name = "Endure" },
+            },
+            milestones = {
+                { name = "First Birth", event = "Principle: New Life" },
+                { name = "First Death", event = "Principle: Death" },
+                { name = "15 Population", event = "Principle: Society" },
+            },
+            objectsByLocation = {
+                ["Innovation Deck"] = { tag = "Deck", name = "Innovation Deck", type = "Innovations", faceDown = true, cards = {
+                    { name = "Ammonia - Language Consequence", type = "Innovations" },
+                    { name = "Drums - Language Consequence", type = "Innovations" },
+                    { name = "Hovel - Language Consequence", type = "Innovations" },
+                    { name = "Inner Lantern - Language Consequence", type = "Innovations" },
+                    { name = "Paint - Language Consequence", type = "Innovations" },
+                    { name = "Symposium - Language Consequence", type = "Innovations" },
+                } },
+                ["Principle: Death"] = { tag = "Deck", name = "Principle: Death", type = "Innovations", faceDown = true, cards = {
+                    { name = "Cannibalize - Death Principle", type = "Innovations" },
+                    { name = "Graves - Death Principle", type = "Innovations" },
+                } },
+                ["Principle: New Life"] = { tag = "Deck", name = "Principle: New Life", type = "Innovations", faceDown = true, cards = {
+                    { name = "Protect the Young - New Life Principle", type = "Innovations" },
+                    { name = "Survival of the Fittest - New Life Principle", type = "Innovations" },
+                } },
+                ["Principle: Society"] = { tag = "Deck", name = "Principle: Society", type = "Innovations", faceDown = true, cards = {
+                    { name = "Accept Darkness - Society Principle", type = "Innovations" },
+                    { name = "Collective Toil - Society Principle", type = "Innovations" },
+                } },
+                ["Principle: Conviction"] = { tag = "Deck", name = "Principle: Conviction", type = "Innovations", faceDown = true, cards = {
+                    { name = "Barbaric - Conviction Principle", type = "Innovations" },
+                    { name = "Romantic - Conviction Principle", type = "Innovations" },
+                } },
+                ["Innovation 1"] = { tag = "Card", name = "Language", type = "Innovations" },
+                ["Settlement Location 1"] = { tag = "Card", name = "Lantern Hoard", type = "Settlement Locations" },
+            },
+            references = {
+                { name = "Age Reference", location = "Reference 1" },
+                { name = "Intimacy Reference", location = "Reference 2" },
+                { name = "Bold Reference", location = "Reference 3" },
+                { name = "Insight Reference", location = "Reference 4" },
+            },
+            remove = {
+                ["Weapon Proficiencies"] = {"Twilight Sword"},
+                ["Rare Gear"] = {"Twilight Sword"},
+            },
+            milestoneEvents = {
+                ["huntXp"] = {
+                    { rules = "Core Rules", state = 53 },  -- Age
+                    { rules = "Core Rules", state = 53 },  -- Age
+                    { rules = "Core Rules", state = 53 },  -- Age
+                    { rules = "Core Rules", state = 53 },  -- Age
+                    { rules = "Core Rules", state = 22 },  -- Retired
+                },
+                ["courage"] = {
+                    { rules = "Core Rules", state = 56 },  -- Bold
+                    { rules = "Core Rules", state = 83 },  -- See the Truth
+                },
+                ["understanding"] = {
+                    { rules = "Core Rules", state = 65 },  -- Insight
+                    { rules = "Core Rules", state = 90 },  -- White Secret
+                },
+                ["weaponProficiency"] = {
+                    { rules = "Core Rules", state = 21 },  -- Specialist
+                    { rules = "Core Rules", state = 21 },  -- Master
+                },
+            },
+        },
+    },
+
+    terrain = {
+        ["Mineral Vein"] = { terrainTile = "Mineral Vein", count = 1 },
+    },
+
+    terrainTileSizes = {
+        ["Mineral Vein"] = { x = 1, y = 1 },
+        ["Challenge Deck"] = { x = 1, y = 2 },
+        ["Twilight Survival"] = { x = 1, y = 2 },
+    },
+
+    settlementLocationGear = {
+        ["Bronzesmith"] = "Bronzesmith Gear",
+    },
+
+    armorStats = {
+        ["Bronze Gauntlets"]        = { head = 0, arms = 3, body = 0, waist = 0, legs = 0},
+        ["Bronze Greaves"]          = { head = 0, arms = 0, body = 0, waist = 0, legs = 3},
+        ["Bronze Cuirass"]          = { head = 0, arms = 0, body = 3, waist = 3, legs = 0},
+        ["Nerve Cuirass"]           = { head = 0, arms = 0, body = 6, waist = 0, legs = 0},
+        ["Awakened Twilight Cloak"] = { head = 0, arms = 0, body = 3, waist = 0, legs = 0, modifier=true},
+        ["Relic Hood"]              = { head = 2, arms = 0, body = 0, waist = 0, legs = 0},
+        ["Tattered Hood"]           = { head = 1, arms = 0, body = 0, waist = 0, legs = 0},
+    },
+
+    weaponStats = {
+        ["Bronze Sword"]               = { speed = 2, accuracy = 6, strength = 6, deadly = 2 },
+        ["Lantern Nerve Whip"]         = { speed = 2, accuracy = 6, strength = 9, deadly = 2, paired = true },
+        ["Twilight Sword (Allison)"]   = { speed = 1, accuracy = 9, strength = 9, slow = true },
+        ["Charged Twilight Sword"]     = { speed = 1, accuracy = 9, strength = 9, slow = true },
+    },
+
+    guidNames = { ["f5dfca"] = "Allison the Twilight Knight Archive" },
+
+    archiveEntries = {
+        archive = "Allison the Twilight Knight Archive",
+        entries = {
+            { "Allison the Twilight Knight Rules", "Rulebook" },
+
+            { "Quick Strike", "Fighting Arts" },
+
+            { "Twilight Sword Proficiency (Allison)", "Weapon Proficiencies" },
+
+            { "Impetuous", "Disorders" },
+            { "Allison the Twilight Knight Strange Resources", "Strange Resources" },
+
+            { "Allison the Twilight Knight Settlement Events", "Settlement Events" },
+
+            { "Bronze Armor", "Armor Sets" },
+
+            { "Mineral Vein", "Terrain" },
+            { "Mineral Vein", "Terrain Tiles" },
+
+            { "Allison the Twilight Knight Abilities", "Abilities" },
+            { "Allison the Twilight Knight Innovations", "Innovations" },
+
+            { "Sneak Attack", "Tactics" },
+
+            { "Bronzesmith Gear", "Gear" },
+            { "Allison the Twilight Knight Rare Gear", "Gear" },
+
+            { "Bronzesmith", "Settlement Locations" },
+
+            { "Dread Watcher Special AI", "AI" },
+            { "Dread Watcher", "Monster Figurine" },
+
+            { "Allison the Twilight Knight", "Monster Figurine" },
+
+            { "Allison the Twilight Knight Basic Action", "AI" },
+            { "Allison the Twilight Knight Basic AI", "AI" },
+            { "Allison the Twilight Knight Info", "AI" },
+            { "Allison the Twilight Knight Advanced AI", "AI" },
+            { "Allison the Twilight Knight Legendary AI", "AI" },
+            { "Allison the Twilight Knight Special AI", "AI" },
+            { "Allison the Twilight Knight Hit Locations", "Hit Locations" },
+            { "Challenge Deck", "Terrain Tiles" },
+            { "Twilight Survival", "Terrain Tiles" },
+        },
+    },
+
+    rulebooks = {
+        {
+            name = "Allison the Twilight Knight Rules",
+            pages = {
+                ["Allison the Twilight Knight Rules"] = {
+                    keywords = { "Twilight", "Allison", "Knight", "Rulebook", "Rules" },
+                    state = 0,
+                },
+                ["Allison: Hooded Knight"] = {
+                    keywords = { "Allison:", "Hooded", "Knight"},
+                    state = 6,
+		                timelineEvent = true,
+                },
+                ["Showdown: Allison the Twilight Knight"] = {
+                    keywords = { "Showdown", "Allison", "Twilight", 'Knight' },
+                    state = 8,
+                    showdown = true,
+                },
+                ["The Duel"] = {
+                    keywords = { "The", "Duel", "Allison", "Twilight" },
+                    state = 10,
+                },
+                ["The Order"] = {
+                    keywords = { "Order", "Allison", "Twilight" },
+                    state = 12,
+                },
+                ["Return of the Order"] = {
+                    keywords = { "Return", "Order", "Allison", "Twilight" },
+                    state = 14,
+		                timelineEvent = true,
+                },
+                ["Who Watches the Watcher"] = {
+                    keywords = { "Who", "Watches", "Watcher", "Allison", "Twilight" },
+                    state = 16,
+                },
+                ["Showdown: The Watcher*"] = {
+                    keywords = { "Showdown", "Watcher", "Allison", "Twilight" },
+                    state = 18,
+                    showdown = true,
+                },
+            },
+        },
+    },
+
+    monsters = {
+        {
+            name = "Allison the Twilight Knight",
+            nemesis = true,
+            size = { x = 2, y = 2 },
+            resourcesDeck = false,
+            rules = { "Allison the Twilight Knight Rules", 8 },
+            position = "(11.5, 8.5)",
+            playerPositions = { "(10, 16)", "(11, 16)", "(12, 16)", "(13, 16)" },
+            fixedTerrain = {
+                {
+                    terrain = "3 Stone Columns",
+                    positions = { "(10, 6.5)", "(11.5, 5)", "(13, 6.5)" },
+                    rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 270, z = 0 }, { x = 0, y = 180, z = 0 } },
+                },
+                {
+                    terrain = "Mineral Vein",
+                    positions = { "(12, 4)" },
+                    rotations = { { x = 0, y = 180, z = 0 } },
+                },
+            },
+            specialTerrain = {
+                {
+                    terrainTile = "Challenge Deck",
+                    position = "Trait/Mood 14",
+                    rotation = { x = 0, y = 180, z = 180 },
+                },
+                {
+                    terrainTile = "Twilight Survival",
+                    position = "Trait/Mood 11",
+                    rotation = { x = 0, y = 180, z = 0 },
+                },
+            },
+            randomTerrain = 1,
+            levels = {
+                {
+                    name = "Level 1",
+                    level = 1,
+                    showdown = {
+                        starting = {
+                            special = { "Will to Survive", "Deadly Invitation", "Out of Your League", "Armored Veteran"},
+                        },
+                        removeHitLocations = { "Void Nerve Hood", "High Voltage Lanterns", "Hydrostatic Skeletal Plate", "Ganglial Lantern Robe" },
+                        basic = 8,
+                        advanced = 4,
+                        movement = 6,
+                        toughness = 10,
+                    },
+                },
+                {
+                    name = "Level 2",
+                    level = 2,
+                    showdown = {
+                        starting = {
+                            special = { "Will to Survive", "Deadly Invitation", "Out of Your League", "Armored Veteran"},
+                        },
+                        removeHitLocations = { "Void Nerve Hood", "High Voltage Lanterns", "Hydrostatic Skeletal Plate", "Ganglial Lantern Robe" },
+                        basic = 8,
+                        advanced = 5,
+                        legendary = 1,
+                        movement = 8,
+                        toughness = 12,
+                        speed = 1,
+                        damage = 1,
+                        accuracy = 1,
+                    },
+                },
+                {
+                    name = "Level 3",
+                    level = 3,
+                    showdown = {
+                        starting = {
+                            special = { "Will to Survive", "Deadly Invitation", "Out of Your League", "Armored Veteran", "Indomitable", "Sentient Blade"},
+                        },
+                        basic = 9,
+                        advanced = 6,
+                        legendary = 2,
+                        movement = 9,
+                        toughness = 13,
+                        speed = 1,
+                        damage = 1,
+                        accuracy = 2,
+                        luck = 1,
+                    },
+                },
+                {
+                    name = "Level 4",
+                    level = 4,
+                    showdown = {
+                        starting = {
+                            special = { "Will to Survive", "Deadly Invitation", "Out of Your League", "Armored Veteran", "Indomitable", "Sentient Blade", "Twilight of Nothingness"},
+                        },
+                        removeHitLocations = { "Void Nerve Hood", "High Voltage Lanterns", "Hydrostatic Skeletal Plate", "Ganglial Lantern Robe" },
+                        basic = 10,
+                        advanced = 8,
+                        legendary = 2,
+                        movement = 9,
+                        toughness = 15,
+                        speed = 2,
+                        damage = 2,
+                        accuracy = 3,
+                        luck = 2,
+                    },
+                },
+            },
+        },
+        {
+            name = "Dread Watcher",
+            nemesis = true,
+            size = { x = 2, y = 2 },
+            rules = { "Allison the Twilight Knight Rules", 18 },
+            resourcesDeck = false,
+            basicAction = "Watcher Basic Action",
+            basicAiDeck = "Watcher Basic AI",
+            info = "Watcher Info",
+            hitLocationsDeck = "Watcher Hit Locations",
+            advancedAiDeck = false,
+            legendaryAiDeck = false,
+            position = "(11.5, 8.5)",
+            playerPositions = { "(7, 4)", "(16, 4)", "(7, 13)", "(16, 13)" },
+            playerRotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 },{ x = 0, y = 0, z = 0 },{ x = 0, y = 0, z = 0 } },
+            levels = {
+                {
+                    name = "Level 1",
+                    level = 1,
+                    showdown = {
+                        survivorStatus = { "Retinue", "Retinue", "Retinue", "Retinue" },
+                        starting = {
+                            special = { "Audience", "Lantern Vortex", "Vapor of Nothingness", "Horripilation", "Insatiable", "Unyielding" },
+                            misc = { "Indomitable" },
+                        },
+                        basic = 12,
+                        life = 30,
+                        movement = 0,
+                        toughness = 25,
+                    },
+                },
+            },
+        },
+    },
+}

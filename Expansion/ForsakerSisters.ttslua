@@ -1,0 +1,209 @@
+return {
+    name = "Forsaker Sisters",
+
+    components = {
+        ["Secret Fighting Arts"] = "Forsaker Sisters Secret Fighting Arts",
+        ["Disorders"] = "Forsaker Sisters Disorders",
+        ["Strange Resources"] = "Forsaker Sisters Strange Resources",
+        ["Rare Gear"] = "Forsaker Sisters Rare Gear",
+        ["Terrain"] = "Forsaker Sisters Terrain",
+        ["Terrain Tiles"] = { "Hovel", "2 Cowering Survivors" },
+    },
+
+    removeTimelineEvent = { year = 6, name = "Armored Strangers" },
+    replaceNemesis = { nemesis = "King's Man", replacement = "Forsaker Sisters" },
+    timelineEvents = {
+        { year = 6, name = "Air of Dominance", type = "RulebookEvent" },
+    },
+
+    armorStats = {
+        ["Forsaker Veil"] = { head = 3, arms = 0, body = 0, waist = 0, legs = 0, modifier = true},
+    },
+
+    weaponStats = {
+        ["Pig Iron Polearm"] = { speed = 1, accuracy = 4, strength = 7, deadly = 1 },
+        ["Pig Iron Blade"] = { speed = 3, accuracy = 6, strength = 3 },
+    },
+
+    guidNames = { ["c9d744"] = "Forsaker Sisters Archive" },
+
+    archiveEntries = {
+        archive = "Forsaker Sisters Archive",
+        entries = {
+            { "Forsaker Sisters Rules", "Rulebook" },
+
+            { "Forsaker Sisters Secret Fighting Arts", "Secret Fighting Arts" },
+
+            { "Forsaker Sisters Disorders", "Disorders" },
+            { "Forsaker Sisters Strange Resources", "Strange Resources" },
+
+            { "Forsaker Sisters Rare Gear", "Gear" },
+
+            { "Forsaker Sisters Terrain", "Terrain" },
+
+            { "Hovel", "Terrain Tiles" },
+            { "Cowering Survivors", "Terrain Tiles" },
+
+            { "Forsaker Sisters", "Monster Figurine" },
+            { "Grace", "Monster Figurine" },
+            { "Glory", "Monster Figurine" },
+
+            { "Forsaker Sisters Info", "AI" },
+            { "Forsaker Sisters Basic Action", "AI" },
+
+            { "Grace Basic AI", "Terrain Tiles" },
+            { "Grace Advanced AI", "Terrain Tiles" },
+            { "Grace Legendary AI", "Terrain Tiles" },
+
+            { "Glory Basic AI", "AI" },
+            { "Glory Advanced AI", "AI" },
+            { "Glory Legendary AI", "AI" },
+
+            { "Forsaker Sisters Special AI", "AI" },
+            { "Forsaker Sisters Hit Locations", "Hit Locations" },
+        },
+    },
+
+    rulebooks = {
+        {
+            name = "Forsaker Sisters Rules",
+            pages = {
+                ["Forsaker Sisters Rules"] = {
+                    keywords = { "Forsaker", "Sisters", "Rulebook", "Rules" },
+                    state = 0,
+                },
+                ["Air of Dominance"] = {
+                    keywords = { "Air", "Dominance", "Sisters", "Forsaker" },
+                    state = 4,
+                },
+                ["Showdown: Forsaker Sisters"] = {
+                    keywords = { "Showdown", "Sisters", "Forsaker" },
+                    state = 6,
+                },
+                ["Darkest Desires"] = {
+                    keywords = { "Darkest", "Desires", "Sisters", "Forsaker" },
+                    state = 8,
+                },
+                ["Childhood's End"] = {
+                    keywords = { "Childhood", "Childhood's", "End", "Sisters", "Forsaker" },
+                    state = 10,
+                },
+            },
+        },
+    },
+
+    terrain = {
+        ["Hovel"] = { terrainTile = "Hovel", count = 1 },
+        ["2 Cowering Survivors"] = { terrainTile = "Cowering Survivor", count = 2 },
+    },
+
+    terrainTileSizes = {
+        ["Hovel"] = { x = 2, y = 2 },
+        ["Cowering Survivor"] = { x = 1, y = 1 },
+    },
+
+    monsters = {
+        {
+            name = "Forsaker Sisters",
+            nemesis = true,
+            size = { x = 1, y = 1 },
+            rules = { "Forsaker Sisters Rules", 6 },
+            resourcesDeck = false,
+            basicAiDeck = 'Glory Basic AI',
+            advancedAiDeck = 'Glory Advanced AI',
+            legendaryAiDeck = 'Glory Legendary AI',
+            position = "(11, 9)",
+            playerPositions = { "(4, 14)", "(5, 15)", "(18, 15)", "(19, 14)" },
+            playerRotations = { { x = 0, y = 90, z = 0 }, { x = 0, y = 90, z = 0 }, { x = 0, y = -90, z = 0 }, { x = 0, y = -90, z = 0 } },
+            fixedTerrain = {
+                {
+                    terrain = "2 Cowering Survivors",
+                    positions = { "(5, 5)", "(18, 5)"},
+                    rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 } },
+
+                },
+                {
+                    terrain = "Hovel",
+                    positions = { "(5.5, 6.5)" },
+                    rotations = { { x = 0, y = 180, z = 0 } },
+                },
+                {
+                    terrain = "Hovel",
+                    positions = { "(17.5, 6.5)" },
+                    rotations = { { x = 0, y = 180, z = 0 } },
+                },
+            },
+            specialTerrain = {
+                {
+                    terrainTile = "Grace Basic AI",
+                    position = "Trait/Mood 14",
+                    rotation = { x = 0, y = 180, z = 180 },
+                },
+                {
+                    terrainTile = "Grace Advanced AI",
+                    position = "Trait/Mood 13",
+                    rotation = { x = 0, y = 180, z = 180 },
+                },
+                {
+                    terrainTile = "Grace Legendary AI",
+                    position = "Trait/Mood 12",
+                    rotation = { x = 0, y = 180, z = 180 },
+                },
+            },
+            randomTerrain = 0,
+            levels = {
+                {
+                    name = "Level 1",
+                    level = 1,
+                    showdown = {
+                        starting = {
+                            special = { "Blood Relative", "Dreaded Trophies", "Revenge", "No Mercy for the Weak" },
+                        },
+                        basic = 5,
+                        advanced = 4,
+                        movement = 7,
+                        toughness = 10,
+                    },
+                },
+                {
+                    name = "Level 2",
+                    level = 2,
+                    showdown = {
+                        starting = {
+                            special = { "Blood Relative", "Dreaded Trophies", "Revenge", "No Mercy for the Weak", "Love Scorned"},
+                        },
+                        basic = 5,
+                        advanced = 4,
+                        legendary = 1,
+                        movement = 7,
+                        toughness = 14,
+                        speed = 1,
+                        damage = 1,
+                        accuracy = 1,
+                        evasion = 1,
+                    },
+                },
+                {
+                    name = "Level 3",
+                    level = 3,
+                    showdown = {
+                        survivorStatus = { "Infectious Lunacy", "Infectious Lunacy", "Infectious Lunacy", "Infectious Lunacy" },
+                        starting = {
+                            special = { "Blood Relative", "Dreaded Trophies", "Revenge", "No Mercy for the Weak", "Love Scorned"},
+                            misc = { "Indomitable" },
+                        },
+                        basic = 7,
+                        advanced = 4,
+                        legendary = 2,
+                        movement = 9,
+                        toughness = 17,
+                        speed = 2,
+                        damage = 2,
+                        accuracy = 2,
+                        evasion = 2,
+                    },
+                },
+            },
+        },
+    },
+}

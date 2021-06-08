@@ -1,0 +1,264 @@
+return {
+		name = "Storm Knight",
+
+		components = {
+				["Settlement Events"] = "Storm Knight Settlement Events",
+				["Terrain"] = "Forsaken Fog",
+				["Tactics"] = "Storm Knight Tactics",
+				["Disorders"] = "Storm Knight Disorders",
+				["Secret Fighting Arts"] = "Storm Knight Secret Fighting Arts",
+				["Strange Resources"] = "Metal Face",
+				["Terrain Tiles"] = "Forsaken Fog",
+				["Terrain Tiles"] = "Lightning Rod",
+        ["Rare Gear"] = "Storm Knight Rare Gear",
+				["Innovations"] = "Storm Knight Innovationss"
+		},
+
+		terrainTileSizes = {
+				["Forsaken Fog"] = { x = 6, y = 6},
+				["Lightning Rod"] = { x = 1, y = 1},
+		},
+
+		terrain = {
+        ["Forsaken Fog"] = { terrainTile = "Forsaken Fog", count = "1" },
+		},
+
+		armorStats = {
+			["Storm Mantle"] = { head = 0, arms = 1, body = 1, waist = 0, legs = 0, modifier = true },
+			["Storm Helmet"] = { head = 5, arms = 0, body = 0, waist = 0, legs = 0},
+		},
+
+		weaponStats = {
+			["Lightning Rod"] = { speed = 2, accuracy = 6, strength = 6 },
+			["Fulgerite Stone"] = { speed = 2, accuracy = 7, strength = 1 },
+			["Bone Katana"] = { speed = 3, accuracy = 6, strength = 3, deadly = 1 },
+			["Inazuma"] = { speed = 4, accuracy = 4, strength = 0 },
+		},
+
+		removeTimelineEvent = { year = 11, name = "Regal Visit" },
+		replaceNemesis = { nemesis = "The Hand", replacement = "" },
+		timelineEvents = {
+				{ year = 11, name = "Looming Storm", type = "RulebookEvent" },
+		},
+
+		guidNames = { ["29948e"] = "Storm Knight Archive" },
+
+		archiveEntries = {
+		archive = "Storm Knight Archive",
+		entries = {
+				{ "Storm Knight Rules", "Rulebook" },
+				{ "Storm Knight Basic Action", "AI" },
+				{ "Storm Knight Info", "AI" },
+				{ "Storm Knight Hit Locations", "Hit Locations" },
+				{ "Storm Knight Special AI", "AI" },
+				{ "Storm Knight Legendary AI", "AI" },
+				{ "Storm Knight Advanced AI", "AI" },
+				{ "Storm Knight Basic AI", "AI" },
+				{ "Storm Knight", "Monster Figurine" },
+				{ "Storm Knight Settlement Events", "Settlement Events" },
+				{ "Forsaken Fog", "Terrain" },
+				{ "2 Lightning Rods", "Terrain" },
+				{ "Storm Knight Tactics", "Tactics" },
+				{ "Storm Knight Disorders", "Disorders" },
+				{ "Storm Knight Secret Fighting Arts", "Secret Fighting Arts" },
+				{ "Metal Face", "Strange Resources" },
+				{ "Storm Knight Rare Gear", "Gear" },
+				{ "Forsaken Fog", "Terrain Tiles" },
+				{ "Lightning Rod", "Terrain Tiles" },
+				{ "Storm Knight Innovations", "Innovations" }
+				},
+		},
+
+		settlementEvents = {
+        "Wandering Master",
+        "Structural Collapse",
+				"Beats of the Hammer"
+		},
+
+
+		rulebooks = {
+				{
+		        name = "Storm Knight Rules",
+		        pages = {
+		            ["Storm Knight Rules"] = {
+		                keywords = { "Storm", "Knight", "Rulebook", "Rules" },
+		                state = 0,
+		            },
+		            ["Looming Storm"] = {
+		                keywords = {"Looming", "Storm"},
+		                state = 4,
+		                timelineEvent = true,
+		            },
+		            ["Showdown: Storm Knight"] = {
+		                keywords = {"Showdown:", "Storm", "Knight"},
+		                state = 6,
+		                showdown = true,
+		            },
+		            ["Aftermath"] = {
+		                keywords = {"Aftermath"},
+		                state = 8,
+		            },
+		            ["Ill-Fated Circumstance"] = {
+		                keywords = {"Ill-Fated", "Circumstance"},
+		                state = 10,
+		                timelineEvent = true,
+		            },
+		            ["Rise to the Challenge"] = {
+		                keywords = {"Rise", "to", "the", "Challenge"},
+		                state = 12,
+		                timelineEvent = true,
+		            },
+		            ["Showdown: Storm Knight Level 3"] = {
+		                keywords = {"Showdown:", "Storm", "Knight"},
+		                state = 14,
+		                showdown = true,
+		            },
+		            ["Storm Break"] = {
+		                keywords = {"Storm", "Break"},
+		                state = 16,
+		            },
+						},
+				},
+		},
+
+		monsters = {
+				{
+						name = "Storm Knight",
+						nemesis = true,
+						size = { x = 2, y = 2 },
+						rules = { "Storm Knight Rules", 6 },
+						resourcesDeck = false,
+						position = "(11.5, 8.5)",
+            playerPositions = { "(10, 16)", "(11, 16)", "(12, 16)", "(13, 16)" },
+						playerRotations = { { x = 0, y = 90, z = 0 }, { x = 0, y = 90, z = 0 }, { x = 0, y = -90, z = 0 }, { x = 0, y = -90, z = 0 } },
+						levels = {
+								{
+										name = "Level 1",
+										level = 1,
+										showdown = {
+												starting = {
+														special = { "Charged", "Cloud Walk", "Stormy Temper", "Electrical Current", "Static Shield" },
+												},
+												basic = 8,
+												advanced = 2,
+												movement = 8,
+												toughness = 11,
+
+												fixedTerrain = {
+														{
+																terrain = "3 Stone Columns",
+																positions = { "(7, 8.5)", "(11.5, 4)", "(16, 8.5)" },
+																rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 270, z = 0 }, { x = 0, y = 180, z = 0 } },
+														},
+												},
+												randomTerrain = 2,
+										},
+								},
+								{
+										name = "Level 2",
+										level = 2,
+										showdown = {
+												starting = {
+														special = { "Charged", "Cloud Walk", "Stormy Temper", "Electrical Current", "Static Shield" },
+												},
+												basic = 11,
+												advanced = 4,
+												movement = 8,
+												toughness = 14,
+												speed = 1,
+												damage = 1,
+												accuracy = 1,
+												luck = 1,
+
+												fixedTerrain = {
+														{
+																terrain = "3 Stone Columns",
+																positions = { "(7, 8.5)", "(11.5, 4)", "(16, 8.5)" },
+																rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 270, z = 0 }, { x = 0, y = 180, z = 0 } },
+														},
+						                {
+						                    terrain = "2 Acanthus Plants",
+						                    positions = { "(6, 8)", "(17, 8)" },
+						                    rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 } },
+						                },
+						                {
+						                    terrain = "Bug Patch",
+						                    positions = { "(12, 3)" },
+						                    rotations = { { x = 0, y = 180, z = 0 } },
+						                },
+														{
+																terrain = "Forsaken Fog",
+																positions = { "(11.5, 8.5)" },
+																rotations = { { x = 0, y = 180, z = 0 } },
+														},
+												},
+										},
+								},
+								{
+										name = "Level 3",
+										level = 3,
+										rules = { "Storm Knight Rules", 14 },
+										showdown = {
+												starting = {
+														special = { "Charged", "Three Faced", "Cloud Walk", "Stormy Temper", "Electrical Current", "Storm Clouds", "Static Shield" },
+												},
+												basic = 11,
+												advanced = 7,
+												Legendary = 3,
+												movement = 10,
+												toughness = 16,
+												speed = 2,
+												damage = 2,
+												accuracy = 3,
+												luck = 2,
+
+
+												fixedTerrain = {
+														{
+																terrain = "Toppled Pillar",
+																positions = { "(7, 8.5)" },
+																rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 270, z = 0 }, { x = 0, y = 180, z = 0 } },
+														},
+														{
+																terrain = "Toppled Pillar",
+																positions = { "(16, 8.5)" },
+																rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 270, z = 0 }, { x = 0, y = 180, z = 0 } },
+														},
+														{
+																terrain = "Forsaken Fog",
+																positions = { "(11.5, 8.5)" },
+																rotations = { { x = 0, y = 180, z = 0 } },
+														},
+												},
+												specialTerrain = {
+						                {
+						                    terrain = "2 Lightning Rods",
+						                    terrainTile = "Lightning Rod",
+						                    position = "(7, 6)",
+						                    rotation = { x = 0, y = 180, z = 0 },
+						                },
+														{
+						                    terrain = "2 Lightning Rods",
+						                    terrainTile = "Lightning Rod",
+						                    position = "(7, 11)",
+						                    rotation = { x = 0, y = 180, z = 0 },
+						                },
+														{
+																terrain = "2 Lightning Rods",
+																terrainTile = "Lightning Rod",
+																position = "(16, 6)",
+																rotation = { x = 0, y = 180, z = 0 },
+														},
+														{
+																terrain = "2 Lightning Rods",
+																terrainTile = "Lightning Rod",
+																position = "(16, 11)",
+																rotation = { x = 0, y = 180, z = 0 },
+														},
+												},
+										},
+								},
+						},
+				},
+		},
+}

@@ -1,0 +1,75 @@
+return {
+    name = "Early Gear",
+
+    components = {
+        ["Armor Sets"] = "Early Gear Armor Sets",
+        ["Abilities"] = "Early Gear Abilities",
+        ["Settlement Locations"] = "Early Gear Settlement Locations",
+    },
+
+    settlementLocationGear = {
+        ["Bone Lodge"] = "Bone Lodge Gear",
+        ["Explorer's Shelter"] = "Explorer's Shelter Gear",
+    },
+
+    armorStats = {
+        ["Acanthus Armor Set"]    = { head = 2, arms = 2, body = 2, waist = 2, legs = 2, modifier = true },
+        ["Acanthus Cowl"]     = { head = 1, arms = 0, body = 0, waist = 0, legs = 0 },
+        ["Acanthus Veil"]     = { head = 1, arms = 0, body = 0, waist = 0, legs = 0 },
+        ["Acanthus Wraps"]    = { head = 0, arms = 1, body = 0, waist = 0, legs = 0 },
+        ["Acanthus Cloak"]    = { head = 0, arms = 0, body = 1, waist = 0, legs = 0 },
+        ["Acanthus Vest"]     = { head = 0, arms = 0, body = 1, waist = 0, legs = 0 },
+        ["Acanthus Sash"]     = { head = 0, arms = 0, body = 0, waist = 1, legs = 0 },
+        ["Acanthus Tabis"]    = { head = 0, arms = 0, body = 0, waist = 0, legs = 1 },
+        ["Bone Helmet"]       = { head = 3, arms = 0, body = 0, waist = 0, legs = 0 },
+        ["Bone Armguards"]    = { head = 0, arms = 2, body = 0, waist = 0, legs = 0 },
+        ["Bone Mail"]         = { head = 0, arms = 0, body = 2, waist = 2, legs = 0 },
+        ["Bone Greaves"]      = { head = 0, arms = 0, body = 0, waist = 0, legs = 2 },
+        ["Bone Buckler"]      = { head = 0, arms = 1, body = 0, waist = 0, legs = 0, modifier = true },
+
+    },
+
+    weaponStats = {
+        ["Acanthus Whip"]     = { speed = 2, accuracy = 7, strength = 2},
+        ["Acanthus Shield"]   = { speed = 1, accuracy = 8, strength = 1},
+        ["Acanthus Maul"]     = { speed = 2, accuracy = 7, strength = 3},
+        ["Acanthus Bow"]      = { speed = 3, accuracy = 8, strength = 2},
+        ["Scrap Knuckles"]    = { speed = 2, accuracy = 7, strength = 2},
+        ["Bone Hatchet"]      = { speed = 1, accuracy = 6, strength = 3, paired = true},
+        ["Bone Spear"]        = { speed = 1, accuracy = 5, strength = 2},
+        ["Bone Scythe"]       = { speed = 2, accuracy = 7, strength = 1},
+        ["Scrap Darts"]       = { speed = 2, accuracy = 7, strength = 4},
+        ["Big Bone Blade"]    = { speed = 1, accuracy = 5, strength = 4, deadly = 1},
+        ["Skull Club"]        = { speed = 2, accuracy = 7, strength = 2},
+        ["Bone Buckler"]      = { speed = 1, accuracy = 6, strength = 1},
+    },
+
+    guidNames = { ["872500"] = "Early Gear Archive" },
+
+    archiveEntries = {
+        archive = "Early Gear Archive",
+        entries = {
+            { "Early Gear Rules", "Rulebook" },
+
+            { "Bone Lodge Gear", "Gear" },
+            { "Explorer's Shelter Gear", "Gear" },
+
+            { "Early Gear Abilities", "Abilities"},
+            { "Early Gear Armor Sets", "Armor Sets" },
+
+            { "Early Gear Settlement Locations", "Settlement Locations" },
+        },
+    },
+
+    rulebooks = {
+        {
+            name = "Early Gear Rules",
+            pages = {
+                ["Early Gear Principle: Death"] = {
+                    keywords = { "Early", "Gear", "Principle", "Death" },
+                    state = 1,
+                },
+            },
+        },
+    },
+}
