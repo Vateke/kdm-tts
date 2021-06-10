@@ -1,0 +1,28 @@
+return {
+		name = "Extended Severe Injuries",
+
+		components = {
+				["Terrain"] = "Extended Severe Injuries Terrain",
+		},
+
+		terrain = {
+        ["Crystal Corpse"] = { terrainTile = "Crystal Corpse", count = "1" },
+		    ["Diseased Corpse"] = { terrainTile = "Diseased Corpse", count = "1" },
+		},
+
+		terrainTileSizes = {
+				["Crystal Corpse"] = { x = 1, y = 1},
+				["Diseased Corpse"] = { x = 1, y = 1},
+		},
+
+		guidNames = { ["e68dec"] = "Extended Severe Injuries Archive" },
+
+    archiveEntries = {
+		archive = "Extended Severe Injuries Archive",
+		entries = {
+				{ "Extended Severe Injuries Terrain", "Terrain" },
+				{ "Crystal Corpse", "Terrain Tiles" },
+				{ "Diseased Corpse", "Terrain Tiles" },
+				},
+		},
+}

@@ -509,7 +509,11 @@ function Showdown.Setup(monsterOrName, levelOrName)
         end
         if terrainSetup.terrainTile then
             log:Debugf("Spawning special terrain tile %s at %s", terrainSetup.terrainTile, terrainSetup.position)
-            Archive.Take({ name = terrainSetup.terrainTile, type = "Terrain Tiles", location = terrainSetup.position, rotation = terrainSetup.rotation })
+            local positions = terrainSetup.positions or { terrainSetup.position }
+            local rotations = terrainSetup.rotations or { terrainSetup.rotation }
+            for i, position in ipairs(positions) do
+                SpawnTerrainTile(terrainSetup.terrainTile, position, rotations[i])
+            end
         end
         if terrainSetup.miscObject then
             log:Debugf("Spawning special misc object %s/%s at %s", terrainSetup.miscObject.name, terrainSetup.miscObject.type, miscLocation)

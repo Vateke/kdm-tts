@@ -9,7 +9,7 @@ return {
 				["Disorders"] = "Drifter Knight Disorders",
 				["Secret Fighting Arts"] = "Drifting Dance",
 				["Fighting Arts"] = "Drifter Knight Fighting Arts",
-				["Terrain"] = "Drifter Knight Terrain",
+				["Terrain"] = "Tidal Pool",
         ["Rare Gear"] = "Drifter Knight Rare Gear",
 		},
 
@@ -73,6 +73,9 @@ return {
 				{ "Drifter Knight Legendary AI", "AI" },
 				{ "Drifter Knight Basic AI", "AI" },
 				{ "Drifter Knight Terrain", "Terrain" },
+				{ "3 Living Coral", "Terrain" },
+				{ "3 Dead Coral", "Terrain" },
+				{ "Tidal Pool", "Terrain" },
 				{ "Drifter Knight Resources", "Monster Resources" },
         { "Drifter Knight", "Monster Figurine" },
 				},
@@ -120,16 +123,6 @@ return {
 										positions = { "(11.5, 8.5)" },
 										rotations = { { x = 0, y = 180, z = 0 } },
 								},
-								{
-										terrain = "3 Living Coral",
-										positions = { "(7, 8)", "(7, 9)", "(11, 4)" },
-										rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 } , { x = 0, y = 180, z = 0 } , { x = 0, y = 180, z = 0 } },
-								},
-								{
-										 terrain = "3 Dead Coral",
-										 positions = { "(16, 8)", "(16, 9)", "(12, 4)" },
-										 rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 180, z = 0 } , { x = 0, y = 180, z = 0 } , { x = 0, y = 180, z = 0 } },
-								}
 						},
 
 						specialTerrain = {
