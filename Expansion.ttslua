@@ -15,6 +15,21 @@ local Manhunter = require("Kdm/Expansion/Manhunter")
 local Slenderman = require("Kdm/Expansion/Slenderman")
 local Spidicules = require("Kdm/Expansion/Spidicules")
 local Sunstalker = require("Kdm/Expansion/Sunstalker")
+<<<<<<< Updated upstream
+=======
+
+--Fan content
+local Vermin = require("Kdm/Expansion/Vermin")
+local Allison = require("Kdm/Expansion/Allison")
+local ForsakerSisters = require("Kdm/Expansion/ForsakerSisters")
+local ButcherEvent = require("Kdm/Expansion/ButcherEvent")
+local DrifterKnight = require("Kdm/Expansion/DrifterKnight")
+local EarlyGear = require("Kdm/Expansion/EarlyGear")
+local StormKnight = require("Kdm/Expansion/StormKnight")
+local StormDancer = require("Kdm/Expansion/StormDancer")
+local ExtendedSevereInjuries = require("Kdm/Expansion/ExtendedSevereInjuries")
+local Champions = require("Kdm/Expansion/Champions")
+>>>>>>> Stashed changes
 
 ---------------------------------------------------------------------------------------------------
 
@@ -37,6 +52,19 @@ function Expansion.Init(saveState)
         Slenderman,
         Spidicules,
         Sunstalker,
+<<<<<<< Updated upstream
+=======
+        Vermin,
+        Allison,
+        ForsakerSisters,
+        ButcherEvent,
+        DrifterKnight,
+        EarlyGear,
+        StormKnight,
+        StormDancer,
+        ExtendedSevereInjuries,
+        Champions,
+>>>>>>> Stashed changes
     }
 
     Expansion.expansionsByName = {}

@@ -474,6 +474,7 @@ function Campaign.Import(data)
     Campaign.SetupArchiveOverrides(data.expansions)
 
     Campaign.SetupDeckFromExpansionComponents("Abilities", data)
+    Campaign.SetupDeckFromExpansionComponents("Secondary Abilities", data, { type = "Abilities"} )
     Campaign.SetupDeckFromExpansionComponents("Fighting Arts", data, { shuffle = true })
     Campaign.SetupDeckFromExpansionComponents("Secret Fighting Arts", data)
     Campaign.SetupDeckFromExpansionComponents("Disorders", data, { shuffle = true })
@@ -664,10 +665,15 @@ end
 ---------------------------------------------------------------------------------------------------
 
 function Campaign.SetupDeckFromExpansionComponents(name, data, params)
+
+    if name == "Secondary Abilities" then log:EnableDebug(true) end
+
     local params = params or {}
     local location = Location.Get(name)
     local component = params.component or name
     local type = params.type or name
+
+    local logging = false
 
     log:Debugf("Setting up %s deck", name)
 
@@ -683,6 +689,8 @@ function Campaign.SetupDeckFromExpansionComponents(name, data, params)
     log:Debugf("No expansions have %s, skipping", name)
         return
     end
+
+    log:Debugf("Location: %s", location)
 
     local rotation = { x = 0, y = 180, z = params.faceUp and 0 or 180 }
     local deckContainer = Archive.CreateDeckFromSources({
@@ -712,6 +720,8 @@ function Campaign.SetupDeckFromExpansionComponents(name, data, params)
     if params.shuffle then
         deckContainer:Shuffle()
     end
+
+    log:EnableDebug(false)
 
     return deckContainer
 end

@@ -1,0 +1,16 @@
+return {
+    name = "Champions",
+
+    components = {
+        ["Secondary Abilities"] = "Genetic Traits",
+    },
+
+    guidNames = { ["c46231"] = "Champions Archive" },
+
+    archiveEntries = {
+        archive = "Champions Archive",
+        entries = {
+            { "Genetic Traits", "Abilities" },
+        },
+    },
+}
