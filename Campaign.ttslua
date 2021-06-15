@@ -476,6 +476,7 @@ function Campaign.Import(data)
     Campaign.SetupArchiveOverrides(data.expansions)
 
     Campaign.SetupDeckFromExpansionComponents("Abilities", data)
+    Campaign.SetupDeckFromExpansionComponents("Secondary Abilities", data, { type = "Abilities"} )
     Campaign.SetupDeckFromExpansionComponents("Fighting Arts", data, { shuffle = true })
     Campaign.SetupDeckFromExpansionComponents("Secret Fighting Arts", data)
     Campaign.SetupDeckFromExpansionComponents("Disorders", data, { shuffle = true })
@@ -666,6 +667,9 @@ end
 ---------------------------------------------------------------------------------------------------
 
 function Campaign.SetupDeckFromExpansionComponents(name, data, params)
+
+    if name == "Secondary Abilities" then log:EnableDebug(true) end
+
     local params = params or {}
     local location = Location.Get(name)
     local component = params.component or name
