@@ -43,33 +43,67 @@ function Showdown.InitExpansions()
     Showdown.levelsByMonsterLevelName = {}
     Showdown.minionsByName = {}
 
+    local core = nil
+
     for _, expansion in ipairs(Expansion.All()) do
         if Expansion.IsEnabled(expansion.name) then
-            for _, monster in ipairs(expansion.monsters or {}) do
-                if monster.resourcesDeck == nil then monster.resourcesDeck = monster.name.." Resources" end
-                if monster.info == nil then monster.info = monster.name.." Info" end
-                if monster.basicAction == nil then monster.basicAction = monster.name.." Basic Action" end
-                if monster.basicAiDeck == nil then monster.basicAiDeck = monster.name.." Basic AI" end
-                if monster.advancedAiDeck == nil then monster.advancedAiDeck = monster.name.." Advanced AI" end
-                if monster.legendaryAiDeck == nil then monster.legendaryAiDeck = monster.name.." Legendary AI" end
-                if monster.specialAiDeck == nil then monster.specialAiDeck = monster.name.." Special AI" end
-                if monster.hitLocationsDeck == nil then monster.hitLocationsDeck = monster.name.." Hit Locations" end
-                monster.expansion = expansion
-                table.insert(Showdown.monsters, monster)
-                Showdown.monstersByName[monster.name] = monster
-                Showdown.expansionsByMonsterName[monster.name] = expansion
-                Showdown.sizesByMonsterName[monster.name] = { x = monster.size.x, y = monster.size.y }
+            if expansion.name == "Core" then
+                core = expansion
+            else
+                for _, monster in ipairs(expansion.monsters or {}) do
+                    if monster.resourcesDeck == nil then monster.resourcesDeck = monster.name.." Resources" end
+                    if monster.info == nil then monster.info = monster.name.." Info" end
+                    if monster.basicAction == nil then monster.basicAction = monster.name.." Basic Action" end
+                    if monster.basicAiDeck == nil then monster.basicAiDeck = monster.name.." Basic AI" end
+                    if monster.advancedAiDeck == nil then monster.advancedAiDeck = monster.name.." Advanced AI" end
+                    if monster.legendaryAiDeck == nil then monster.legendaryAiDeck = monster.name.." Legendary AI" end
+                    if monster.specialAiDeck == nil then monster.specialAiDeck = monster.name.." Special AI" end
+                    if monster.hitLocationsDeck == nil then monster.hitLocationsDeck = monster.name.." Hit Locations" end
+                    monster.expansion = expansion
 
-                for _, level in ipairs(monster.levels) do
-                    Showdown.levelsByMonsterLevelName[monster.name..level.name] = level
+                    printToAll(monster.name)
+
+                    table.insert(Showdown.monsters, monster)
+                    Showdown.monstersByName[monster.name] = monster
+                    Showdown.expansionsByMonsterName[monster.name] = expansion
+                    Showdown.sizesByMonsterName[monster.name] = { x = monster.size.x, y = monster.size.y }
+
+                    for _, level in ipairs(monster.levels) do
+                        Showdown.levelsByMonsterLevelName[monster.name..level.name] = level
+                    end
                 end
-            end
 
-            for _, minion in ipairs(expansion.minions or {}) do
-                Showdown.minionsByName[minion.name] = minion
+                for _, minion in ipairs(expansion.minions or {}) do
+                    Showdown.minionsByName[minion.name] = minion
+                end
             end
         end
     end
+
+    for _, monster in ipairs(core.monsters or {}) do
+        if monster.resourcesDeck == nil then monster.resourcesDeck = monster.name.." Resources" end
+        if monster.info == nil then monster.info = monster.name.." Info" end
+        if monster.basicAction == nil then monster.basicAction = monster.name.." Basic Action" end
+        if monster.basicAiDeck == nil then monster.basicAiDeck = monster.name.." Basic AI" end
+        if monster.advancedAiDeck == nil then monster.advancedAiDeck = monster.name.." Advanced AI" end
+        if monster.legendaryAiDeck == nil then monster.legendaryAiDeck = monster.name.." Legendary AI" end
+        if monster.specialAiDeck == nil then monster.specialAiDeck = monster.name.." Special AI" end
+        if monster.hitLocationsDeck == nil then monster.hitLocationsDeck = monster.name.." Hit Locations" end
+        monster.expansion = core
+
+        if Showdown.monstersByName[monster.name] == nil then
+            printToAll(monster.name)
+            table.insert(Showdown.monsters, monster)
+            Showdown.monstersByName[monster.name] = monster
+            Showdown.expansionsByMonsterName[monster.name] = core
+            Showdown.sizesByMonsterName[monster.name] = { x = monster.size.x, y = monster.size.y }
+
+            for _, level in ipairs(monster.levels) do
+                Showdown.levelsByMonsterLevelName[monster.name..level.name] = level
+            end
+        end
+    end
+
     table.sort(Showdown.monsters, function(x, y) return x.name < y.name end)
 end
 
@@ -231,6 +265,8 @@ end
 -------------------------------------------------------------------------------------------------
 
 function Showdown.Setup(monsterOrName, levelOrName)
+    printToAll(monsterOrName.name)
+    printToAll(monsterOrName.expansion.name)
     if Showdown.settingUp then
         log:Errorf("Showdown setup currently in progress, please wait until finished before setting up another hunt. If the showdown appears to be stuck, click 'Cleanup Showdown' from the 'Cleanup' menu to reset.")
         return

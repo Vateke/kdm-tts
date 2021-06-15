@@ -1,0 +1,234 @@
+return {
+    name = "King's Coin",
+
+    components = {
+        ["Terrain Tiles"] = { "King's Merchant", "Shiny Somethings" },
+        ["Terrain"] = "King's Coin Terrain",
+        ["Abilities"] = "Master of the Curse",
+        ["Disorders"] = "Miserly",
+        ["Settlement Events"] = "King's Merchant",
+        ["Rare Gear"] = "King's Coin Rare Gear",
+        ["Settlement Locations"] = "Merchant Shop",
+    },
+
+    settlementLocationGear = {
+        ["Merchant Shop"] = "Merchant Shop Gear",
+    },
+
+    settlementEvents = {
+        "King's Merchant",
+    },
+
+		terrain = {
+        ["King's Merchant"] = { terrainTile = "King's Merchant", count = "1" },
+        ["Shiny Somethings"] = { terrainTile = "Shiny Somethings", count = "1" },
+		},
+
+		terrainTileSizes = {
+				["King's Merchant"] = { x = 3, y = 2},
+    		["Shiny Somethings"] = { x = 1, y = 1},
+		},
+
+    replaceNemesis = { nemesis = "King's Man", replacement = "King's Man (Coin)" },
+
+    armorStats = {
+        ["Acid Stained Shield"] = { head = 1, arms = 1, body = 1, waist = 1, legs = 1, modifier = true},
+        ["Gilded Crown"] = { head = 3, arms = 0, body = 0, waist = 0, legs = 0, modifier = true},
+    },
+
+    weaponStats = {
+        ["Exotic Saber"]        = { speed = 3, accuracy = 5, strength = 5 },
+        ["Shortbow"]            = { speed = 2, accuracy = 6, strength = 8 },
+        ["Diversion Blade"]     = { speed = 2, accuracy = 7, strength = 5, paired = 1 },
+        ["Spiderbite Daggers"]  = { speed = 4, accuracy = 7, strength = 4 },
+        ["Horned Shield"]       = { speed = 1, accuracy = 4, strength = 6 },
+        ["Stone Hammer"]        = { speed = 2, accuracy = 5, strength = 7 },
+        ["Carving Knife"]       = { speed = 2, accuracy = 6, strength = 4, paired = 1 },
+        ["Dagger of Denial"]    = { speed = 2, accuracy = 6, strength = 5 },
+        ["Acid Stained Shield"] = { speed = 2, accuracy = 6, strength = 4, deadly = 1 },
+    },
+
+    guidNames = { ["b0dc13"] = "King's Coin Archive" },
+
+    archiveEntries = {
+        archive = "King's Coin Archive",
+        entries = {
+            { "King's Coin Rulebook", "Rulebook" },
+            { "King's Merchant", "Terrain Tiles" },
+            { "Coins", "Coins" },
+            { "King's Coin Terrain", "Terrain" },
+            { "Master of the Curse", "Abilities" },
+            { "Miserly", "Disorders" },
+            { "King's Merchant", "Settlement Events" },
+            { "King's Coin Rare Gear", "Gear" },
+            { "Merchant Shop Gear", "Gear" },
+            { "Merchant Shop", "Settlement Locations" },
+            { "King's Man Special AI (Coin)", "AI" },
+            { "King's Man Hit Locations (Coin)", "Hit Locations" },
+            { "The Hand Special AI (Coin)", "AI" },
+        },
+    },
+
+    monsters = {
+      {
+          name = "King's Man",
+          nemesis = true,
+          size = { x = 2, y = 2 },
+          rules = { "King's Coin Rulebook", 4 },
+          resourcesDeck = false,
+          legendaryAiDeck = "Familiar Face",
+          specialAiDeck = "King's Man Special AI (Coin)",
+          hitLocationsDeck = "King's Man Hit Locations (Coin)",
+          position = "(11.5, 8.5)",
+          playerPositions = { "(10, 16)", "(11, 16)", "(12, 16)", "(13, 16)" },
+          fixedTerrain = {
+              {
+                  terrain = "3 Stone Columns",
+                  positions = { "(10, 6.5)", "(11.5, 4)", "(13, 6.5)" },
+                  rotations = { { x = 0, y = 180, z = 0 }, { x = 0, y = 270, z = 0 }, { x = 0, y = 180, z = 0 } },
+              },
+              {
+                  terrain = "King's Merchant",
+              },
+              {
+                  terrain = "Shiny Somethings",
+              },
+          },
+          levels = {
+              {
+                  name = "Level 1",
+                  level = 1,
+                  showdown = {
+                      survivorStatus = { "Battle Tempo", "Battle Tempo", "Battle Tempo", "Battle Tempo" },
+                      starting = {
+                          special = { "Weak Spot", "King's Combat", "King's Aura", "Out-Fighting" },
+                      },
+                      basic = 10,
+                      advanced = 2,
+                      miscHitLocations = { "Battle Pressure", "Battle Pressure", "Battle Pressure" },
+                      topHitLocationCards = { "Battle Pressure", "Battle Pressure", "Battle Pressure" },
+                      movement = 5,
+                      toughness = 12,
+                  },
+              },
+              {
+                  name = "Level 2",
+                  level = 2,
+                  showdown = {
+                      survivorStatus = { "Battle Tempo", "Battle Tempo", "Battle Tempo", "Battle Tempo" },
+                      starting = {
+                          special = { "Weak Spot", "King's Combat", "King's Aura", "Out-Fighting", "Silent Hymn", "Ensemble" },
+                      },
+                      basic = 11,
+                      advanced = 4,
+                      legendary = 1,
+                      miscHitLocations = { "Battle Pressure", "Battle Pressure", "Battle Pressure" },
+                      topHitLocationCards = { "Battle Pressure", "Battle Pressure", "Battle Pressure" },
+                      movement = 6,
+                      toughness = 15,
+                      speed = 1,
+                      damage = 1,
+                  },
+              },
+              {
+                  name = "Level 3",
+                  level = 3,
+                  showdown = {
+                      survivorStatus = { "Battle Tempo", "Battle Tempo", "Battle Tempo", "Battle Tempo" },
+                      starting = {
+                          special = { "Weak Spot", "King's Combat", "King's Aura", "Out-Fighting", "Silent Hymn", "Ensemble" },
+                          misc = { "Indomitable" },
+                      },
+                      basic = 12,
+                      advanced = 6,
+                      legendary = 1,
+                      miscHitLocations = { "Battle Pressure", "Battle Pressure", "Battle Pressure" },
+                      topHitLocationCards = { "Battle Pressure", "Battle Pressure", "Battle Pressure" },
+                      movement = 6,
+                      toughness = 18,
+                      speed = 2,
+                      damage = 2,
+                      accuracy = 2,
+                  },
+              },
+          },
+      },
+      {
+          name = "The Hand",
+          nemesis = true,
+          size = { x = 2, y = 2 },
+          rules = { "Core Rules", 85 },
+          resourcesDeck = false,
+          legendaryAiDeck = false,
+          specialAiDeck = "The Hand Special AI (Coin)",
+          position = "(11.5, 8.5)",
+          playerPositions = { "(10, 16)", "(11, 16)", "(12, 16)", "(13, 16)" },
+          fixedTerrain = {
+              {
+                  terrain = "Giant Stone Face",
+                  positions = { "(11.5, 9)" },
+                  rotations = { { x = 0, y = 180, z = 0 } },
+              },
+          },
+          unfixedTerrain = { "3 Stone Columns" },
+          randomTerrain = 1,
+          levels = {
+              {
+                  name = "Level 1",
+                  level = 1,
+                  showdown = {
+                      survivorStatus = { "Polarized Aura", "Polarized Aura", "Polarized Aura", "Polarized Aura" },
+                      starting = {
+                          special = { "Red Lens", "Green Lens", "Blue Lens", "Ghost Step", "Impossible Eyes" },
+                      },
+                      basic = 10,
+                      customSpecial = { "Applause" },
+                      bottomAiCards = { "Applause" },
+                      movement = 5,
+                      toughness = 14,
+                  },
+              },
+              {
+                  name = "Level 2",
+                  level = 2,
+                  showdown = {
+                      survivorStatus = { "Polarized Aura", "Polarized Aura", "Polarized Aura", "Polarized Aura" },
+                      starting = {
+                          special = { "Red Lens", "Green Lens", "Blue Lens", "Ghost Step", "Impossible Eyes" },
+                      },
+                      basic = 10,
+                      advanced = 1,
+                      customSpecial = { "Applause" },
+                      bottomAiCards = { "Applause" },
+                      movement = 6,
+                      toughness = 15,
+                      speed = 1,
+                      damage = 1,
+                  },
+              },
+              {
+                  name = "Level 3",
+                  level = 3,
+                  showdown = {
+                      survivorStatus = { "Polarized Aura", "Polarized Aura", "Polarized Aura", "Polarized Aura" },
+                      starting = {
+                          special = { "Red Lens", "Green Lens", "Blue Lens", "Ghost Step", "Impossible Eyes" },
+                          misc = { "Indomitable" },
+                      },
+                      basic = 10,
+                      advanced = 2,
+                      customSpecial = { "Applause" },
+                      bottomAiCards = { "Applause" },
+                      movement = 6,
+                      toughness = 30,
+                      speed = 3,
+                      damage = 6,
+                  },
+              },
+          },
+      },
+
+    }
+
+
+}

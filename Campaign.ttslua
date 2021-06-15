@@ -368,6 +368,8 @@ function Campaign.ImportFromCampaign()
         timeline = Campaign.BuildImportTimeline(expansions, campaign),
         spawnInitialSurvivorSheets = true,
     })
+
+    Showdown.Init()
 end
 
 ---------------------------------------------------------------------------------------------------

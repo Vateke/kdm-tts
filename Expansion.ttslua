@@ -25,6 +25,7 @@ local EarlyGear = require("Kdm/Expansion/EarlyGear")
 local StormKnight = require("Kdm/Expansion/StormKnight")
 local StormDancer = require("Kdm/Expansion/StormDancer")
 local ExtendedSevereInjuries = require("Kdm/Expansion/ExtendedSevereInjuries")
+local KingsCoin = require("Kdm/Expansion/KingsCoin")
 
 ---------------------------------------------------------------------------------------------------
 
@@ -56,6 +57,7 @@ function Expansion.Init(saveState)
         StormKnight,
         StormDancer,
         ExtendedSevereInjuries,
+        KingsCoin,
     }
 
     Expansion.expansionsByName = {}
