@@ -119,7 +119,6 @@ function Archive.Take(params)
     local height = params.height or 2
     local location = params.location
     local position = params.position
-
     if location then
         location = Location.Get(location)
         position = location:Center()

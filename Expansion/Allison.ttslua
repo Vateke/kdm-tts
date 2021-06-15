@@ -143,6 +143,7 @@ return {
         ["Awakened Twilight Cloak"] = { head = 0, arms = 0, body = 3, waist = 0, legs = 0, modifier=true},
         ["Relic Hood"]              = { head = 2, arms = 0, body = 0, waist = 0, legs = 0},
         ["Tattered Hood"]           = { head = 1, arms = 0, body = 0, waist = 0, legs = 0},
+        ["Bronze Armor"]            = { head = 1, arms = 1, body = 1, waist = 1, legs = 1, modifier = true },
     },
 
     weaponStats = {
@@ -317,6 +318,7 @@ return {
                     showdown = {
                         starting = {
                             special = { "Will to Survive", "Deadly Invitation", "Out of Your League", "Armored Veteran", "Indomitable", "Sentient Blade"},
+                            misc = { "Indomitable" },
                         },
                         basic = 9,
                         advanced = 6,
@@ -335,6 +337,7 @@ return {
                     showdown = {
                         starting = {
                             special = { "Will to Survive", "Deadly Invitation", "Out of Your League", "Armored Veteran", "Indomitable", "Sentient Blade", "Twilight of Nothingness"},
+                            misc = { "Indomitable" },
                         },
                         removeHitLocations = { "Void Nerve Hood", "High Voltage Lanterns", "Hydrostatic Skeletal Plate", "Ganglial Lantern Robe" },
                         basic = 10,

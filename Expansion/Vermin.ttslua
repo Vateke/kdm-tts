@@ -23,6 +23,15 @@ return {
         },
     },
 
+
+    armorStats = {
+        ["Centipede Claw"]        = { head = 0, arms = 2, body = 0, waist = 0, legs = 0}
+    },
+
+    weaponStats = {
+        ["Centipede Claw"]               = { speed = 2, accuracy = 6, strength = 3 }
+    },
+
     rulebooks = {
         {
             name = "Nightmare Paella",
