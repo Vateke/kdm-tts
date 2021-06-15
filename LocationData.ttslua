@@ -28,9 +28,9 @@ local locationData = {
         p2 = { x = 9.370266, y = 10.741003, z = -2.586191 },
         board = "Showdown Board",
     },
-    ["Secondary Abilities"] = {
+    ["Coins"] = {
         center = { x = 9.015150, y = 10.741002, z = -2.027048 },
-        size = GEAR_SIZE,
+        size = CARD_SIZE,
         board = "Showdown Board",
     },
     ["Abilities"] = {

@@ -16,7 +16,7 @@ NamedObject.data = {
     ["f7805a"] = { name = "Right Table", noninteractible = true },
 
     ["da72c5"] = { name = "Abilities Archive" },
-    ["acb916"] = { name = "Secondary Abilities Archive" },
+    ["acb916"] = { name = "Coins Archive" },
     ["0dc4b8"] = { name = "Fighting Arts Archive" },
     ["13a43d"] = { name = "Secret Fighting Arts Archive" },
     ["590a4f"] = { name = "Disorders Archive" },

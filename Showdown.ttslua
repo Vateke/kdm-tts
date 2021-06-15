@@ -61,8 +61,6 @@ function Showdown.InitExpansions()
                     if monster.hitLocationsDeck == nil then monster.hitLocationsDeck = monster.name.." Hit Locations" end
                     monster.expansion = expansion
 
-                    printToAll(monster.name)
-
                     table.insert(Showdown.monsters, monster)
                     Showdown.monstersByName[monster.name] = monster
                     Showdown.expansionsByMonsterName[monster.name] = expansion
@@ -92,7 +90,6 @@ function Showdown.InitExpansions()
         monster.expansion = core
 
         if Showdown.monstersByName[monster.name] == nil then
-            printToAll(monster.name)
             table.insert(Showdown.monsters, monster)
             Showdown.monstersByName[monster.name] = monster
             Showdown.expansionsByMonsterName[monster.name] = core

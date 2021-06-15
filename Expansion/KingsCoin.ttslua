@@ -9,6 +9,7 @@ return {
         ["Settlement Events"] = "King's Merchant",
         ["Rare Gear"] = "King's Coin Rare Gear",
         ["Settlement Locations"] = "Merchant Shop",
+        ["Coins"] = "King's Coins"
     },
 
     settlementLocationGear = {
@@ -55,7 +56,7 @@ return {
         entries = {
             { "King's Coin Rulebook", "Rulebook" },
             { "King's Merchant", "Terrain Tiles" },
-            { "Coins", "Coins" },
+            { "King's Coins", "Coins" },
             { "King's Coin Terrain", "Terrain" },
             { "Master of the Curse", "Abilities" },
             { "Miserly", "Disorders" },

@@ -12,6 +12,7 @@ local Archive = {}
 
 Archive.data = {
     { "Abilities", "Abilities", "Abilities Archive" },
+    { "Coins", "Coins", "Coins Archive" },
     { "Fighting Arts", "Fighting Arts", "Fighting Arts Archive" },
     { "Secret Fighting Arts", "Secret Fighting Arts", "Secret Fighting Arts Archive" },
     { "Disorders", "Disorders", "Disorders Archive" },
