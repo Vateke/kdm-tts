@@ -49,6 +49,27 @@ return {
         ["Acid Stained Shield"] = { speed = 2, accuracy = 6, strength = 4, deadly = 1 },
     },
 
+    rulebooks = {
+        {
+            name = "King's Coin Rulebook",
+            pages = {
+                ["King's Coin Rulebook"] = {
+                    keywords = { "King'S", "Coin", "Rulebook" },
+                    state = 0,
+                },
+                ["Showdown: King's Man (Coin)"] = {
+                    keywords = { "Showdown", "King's", "Man", "(Coin)" },
+                    state = 4,
+                    showdown = true,
+                },
+                ["Highway Robbery"] = {
+                    keywords = { "Highway", "Robbery" },
+                    state = 6,
+                },
+            },
+        },
+    },
+
     guidNames = { ["b0dc13"] = "King's Coin Archive" },
 
     archiveEntries = {

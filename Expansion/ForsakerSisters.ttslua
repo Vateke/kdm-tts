@@ -79,6 +79,7 @@ return {
                 ["Showdown: Forsaker Sisters"] = {
                     keywords = { "Showdown", "Sisters", "Forsaker" },
                     state = 6,
+                    showdown = true,
                 },
                 ["Darkest Desires"] = {
                     keywords = { "Darkest", "Desires", "Sisters", "Forsaker" },
